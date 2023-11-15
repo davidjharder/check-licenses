@@ -6,7 +6,7 @@ This utility checks the contents of the `license` key in `package.yml` files aga
 
 ## Usage
 
-The utility expects to run from the root of the `packages` monorepo.
+The utility should be placed in `common/GO/check-licenses` and expects to run from the root of the `packages` monorepo.
 
 If a `licenses.json` file does not already exist in the `common/GO/check-licenses` directory, a new copy is wget'ed from the SPDX domain.
 
