@@ -106,13 +106,15 @@ func licenseCheck(yamlPath string, licenseList []string) {
 	if err != nil {
 		//fmt.Println("Switching to multi-license parsing")
 		err = yaml.Unmarshal([]byte(YAMLfileContent), &yamlParseSlice)
+		if err !=nil {
+			log.Fatal("Error parsing multiline: ", err)
+		}
 		for _, id := range yamlParseSlice.License {
-			if err != nil {
-				if slices.Contains(licenseList, id) {
-					//fmt.Println("ok: ", yamlPath, " ", id)
-				} else {
-					fmt.Println("BAD: ", yamlPath, " ", id)
-				}
+			if slices.Contains(licenseList, id) {
+				//fmt.Println("ok: ", yamlPath, " ", id)
+			} else {
+				fmt.Println("BAD: ", yamlPath, " ", id)
+				
 			}
 		}
 		return // return early for yamls with license list
