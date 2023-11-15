@@ -1,4 +1,4 @@
-# `check-lecenses` utility
+# `check-licenses` utility
 
 ## Purpose
 
